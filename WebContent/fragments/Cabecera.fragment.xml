@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ActionSheet title="Choose Your Action" showCancelButton="true" placement="Top">
+		<buttons>
+			<Button id="idBtUser1" text="Boton 1" press="pressNegocio1"/>
+			<Button id="idBtUser2" text="Boton 2" press="pressNegocio2"/>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

@@ -1,0 +1,60 @@
+ {
+	"StockCollection": [
+		{
+			"material": "TMGMXALOT20CCC00",
+			"descripcion": "TERM ALCATEL GSM BLANCO OT903A PTT",
+			"nivStock": "4"
+		},
+		{
+			"material": "TMGMXALOT3060000",
+			"descripcion": "TERM ALCATEL GSM GRIS OT255A PTT",
+			"nivStock": "6"
+		},
+		{
+			"material": "TMGMXAPIPHO5BL16",
+			"descripcion": "TERM APPLE GSM NEGRO IPHONE 4S 16GB",
+			"nivStock": "8"
+		},
+		{
+			"material": "TMGMXBB08520CCXX",
+			"descripcion": "TERM BLACKBERRY GSM 8520",
+			"nivStock": "3"
+		},				
+		{
+			"material": "TMGMXHUS32230000",
+			"descripcion": "TERM HUAWEI GSM BLANCO ASCEND G630",
+			"nivStock": "6"
+		},
+		{
+			"material": "TMGMXHU0F3610000",
+			"descripcion": "TERM HUAWEI GSM BLANCO ASCEND Y530",
+			"nivStock": "2"
+		},
+		{
+			"material": "TMGMXBB08520CC01",
+			"descripcion": "TERM BLACKBERRY GSM BLANCO 9900",
+			"nivStock": "3"
+		},
+		{
+			"material": "TMGMXBB9300PCC00",
+			"descripcion": "TERM BLACKBERRY GSM 9790",
+			"nivStock": "12"
+		},
+		{
+			"material": "TMGMXNKC2-01CC00",
+			"descripcion": "TERM NOKIA GSM BLANCO LUMIA N520",
+			"nivStock": "7"
+		},
+		{
+			"material": "TMGMXAPIPH4GNE08",
+			"descripcion": "TERM APPLE GSM BLANCO IPHONE 4S 16GB",
+			"nivStock": "12"
+		},
+		
+		{
+			"material": "TMGMXSEXPEE1BL00",
+			"descripcion": "TERM SONY GSM XPERIA ARC St",
+			"nivStock": "3"
+		}								 
+	]
+}

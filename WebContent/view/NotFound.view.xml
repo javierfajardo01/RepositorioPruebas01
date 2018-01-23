@@ -1,0 +1,17 @@
+<mvc:View
+		controllerName="aplication.default.controller.NotFound"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m">
+
+	<MessagePage
+			id="page"
+			
+			title="{i18n>notFoundTitle}"
+			text="{i18n>notFoundText}"
+			icon="{sap-icon://document}"
+			description="test not found"
+			showNavButton="true"
+			navButtonPress="onNavBack">
+	</MessagePage>
+
+</mvc:View>

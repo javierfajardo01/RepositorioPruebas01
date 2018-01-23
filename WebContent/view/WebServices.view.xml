@@ -1,0 +1,127 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="aplication.default.controller.WebServices">
+	
+	<Page 
+		title= "Tablas Datos">
+		<Button type="Back" press="onNavBack" />
+		
+		<Table 	id="idCustomersTable1"
+				width="50%"
+				hAlign="Left"
+				items="{
+					path : 'InfoWeb>/datos',
+					sorter : {
+						path : 'LastName'
+					}
+				}">
+		<headerToolbar>
+				<Toolbar>
+					<Title text="Tabla clientes" width= "50%"/>
+					<ToolbarSpacer/>
+					<SearchField id="searchCustomers" width="50%" liveChange="onFilterCustomers"/>
+					<ToolbarSpacer/>
+					<Button text= "Ordenar" press= "onChangeOrder"/>
+				</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em"
+				hAlign="Left">
+				<Text text="LastName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="FirstName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Address"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="City" />
+			</Column>
+			<Column
+				width="12em"
+				hAlign="Right">
+				<Text text="Country" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem 
+						title="{InfoWeb>LastName}"
+						type= "Active"
+						press="onItemSelected">	
+				<cells>
+					<ObjectIdentifier
+						title="{InfoWeb>LastName}"/>
+					<Text
+						text="{InfoWeb>FirstName}"/>
+					<Text
+						text="{InfoWeb>Address}"/>
+					<Text
+						text="{InfoWeb>City}"/>
+					<Text
+						text="{InfoWeb>Country}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<!--
+	<Table id="idCustomersTable2"
+		inset="false"
+		width="50%"
+		hAlign="Right"
+		items="{AuxModel>/results}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Customer Detailed" level="H2"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em"
+				hAlign="Left">
+				<Text text="LastName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="FirstName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Address"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="City" />
+			</Column>
+			<Column
+				width="12em"
+				hAlign="Right">
+				<Text text="Country" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{AuxModel>LastName}" />
+					<Text
+						text="{AuxModel>FirstName}" />
+					<Text
+						text="{AuxModel>Address}"/>
+					<Text
+						text="{AuxModel>City}" />
+					<Text
+						text="{AuxModel>Country}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table> -->
+	</Page>
+</mvc:View>
+		

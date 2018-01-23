@@ -1,0 +1,22 @@
+<core:View	xmlns:core="sap.ui.core" 
+    		xmlns:mvc="sap.ui.core.mvc" 
+    		xmlns="sap.m"
+    		xmlns:l="sap.ui.layout"
+			controllerName="aplication.default.controller.home.main" 
+			xmlns:html="http://www.w3.org/1999/xhtml">
+			
+	<Page 
+			    id="detail" 
+			    title="Página principal" 
+			    class="sapUiStdPage"
+			    showNavButton="{device>/isPhone}"
+			    navButtonPress="onNavMaster">
+			<content>
+					 
+					<Button  type="Accept" press="onPress2" text= "Navegar"/>
+					
+			</content>
+				
+	</Page>
+	 
+</core:View>

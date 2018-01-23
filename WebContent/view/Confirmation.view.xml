@@ -1,0 +1,49 @@
+<core:View	xmlns:core="sap.ui.core" 
+    		xmlns:mvc="sap.ui.core.mvc" 
+    		xmlns="sap.m"
+    		xmlns:l="sap.ui.layout"
+			controllerName="aplication.default.controller.Confirmation" 
+			xmlns:html="http://www.w3.org/1999/xhtml">
+			
+			<Page 
+			    id="detail" 
+			    title="{i18n>appTitle}" 
+			    class="sapUiStdPage"
+			    showNavButton="{device>/isPhone}"
+			    navButtonPress="onNavMaster">
+				<content>
+					<Text text="{i18n>employeesToSend1} {General>/City} {i18n>employeesToSend2}" class="titleText"></Text>
+					<l:Grid
+						defaultSpan="L12 M12 S12"
+						width="auto"
+						class="spanConfirmContainer" >
+						<l:content>
+							<List
+								id="confirmList"
+								items="{
+								  path: 'confirmEmployees>/results'
+								}"
+								headerText="Empleados">
+								<items>
+									<StandardListItem
+										id="employeeItem"
+										description="{confirmEmployees>Title}"	
+										title="{confirmEmployees>FirstName} {confirmEmployees>LastName}"
+										type="Active"/>
+								</items>
+								<infoToolbar>
+									<Toolbar
+										active="true"
+										press="confirmAndSend" >
+										<Label text="{i18n>confirmSend}" />
+									</Toolbar>
+								</infoToolbar>
+							</List>
+							<Button text="{i18n>confirm}" type="Emphasized" icon="sap-icon://accept" press="confirmAndSend" />
+							</l:content>
+					</l:Grid>
+			</content>
+				
+	</Page>
+	 
+</core:View>

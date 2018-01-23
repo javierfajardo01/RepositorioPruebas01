@@ -1,0 +1,421 @@
+ {
+	"OrdenesCollection": [
+		{
+			"ordenId": "1",
+			"ordenName": "Orden 1",
+			"IMEI": "356938035643857",
+			"comprobante": "comprobante 1",
+			"StatusInitial": "Estado 1",
+			"StatusEnd": "Estado 2"
+
+		},
+		{
+			"ordenId": "2",
+			"ordenName": "Orden 2",
+			"IMEI": "356938035643823",
+			"comprobante": "comprobante 2",
+			"StatusInitial": "Estado 3",
+			"StatusEnd": "Estado 4"
+		},
+		{
+			"ordenId": "3",
+			"ordenName": "Orden 3",
+			"IMEI": "356938035643844",
+			"comprobante": "comprobante3",
+			"StatusInitial": "Estado 5",
+			"StatusEnd": "Estado 6"
+		},
+		
+		{
+			"ordenId": "4",
+			"ordenName": "Orden 4",
+			"IMEI": "146938035643821",
+			"comprobante": "comprobante4",
+			"StatusInitial": "Estado 7",
+			"StatusEnd": "Estado 8"
+		}
+		 
+	],
+	"ProductCollectionStats": {
+		"Counts": {
+			"Total": 14,
+			"Weight": {
+				"Ok": 7,
+				"Heavy": 5,
+				"Overweight": 2
+			}
+		},
+		"Groups": {
+			"Category": {
+				"Projector": 1,
+				"Graphics Card": 2,
+				"Accessory": 4,
+				"Printer": 2,
+				"Monitor": 3,
+				"Laptop": 1,
+				"Keyboard": 1
+			},
+			"SupplierName": {
+				"Titanium": 3,
+				"Technocom": 3,
+				"Red Point Stores": 5,
+				"Very Best Screens": 3
+			}
+		},
+		"Filters": [
+			{
+				"type": "Category",
+				"values": [
+					{
+						"text": "Projector",
+						"data": 1
+					},
+					{
+						"text": "Graphics Card",
+						"data": 2
+					},
+					{
+						"text": "Accessory",
+						"data": 4
+					},
+					{
+						"text": "Printer",
+						"data": 2
+					},
+					{
+						"text": "Monitor",
+						"data": 3
+					},
+					{
+						"text": "Laptop",
+						"data": 1
+					},
+					{
+						"text": "Keyboard",
+						"data": 1
+					}
+				]
+			},
+			{
+				"type": "SupplierName",
+				"values": [
+					{
+						"text": "Titanium",
+						"data": 3
+					},
+					{
+						"text": "Technocom",
+						"data": 3
+					},
+					{
+						"text": "Red Point Stores",
+						"data": 5
+					},
+					{
+						"text": "Very Best Screens",
+						"data": 3
+					}
+				]
+			}
+		]
+	},
+	"SintomasAveriasCollection":[
+		{
+			"id":"HA01",
+			"descripcion":"Fallo de altavoz",
+			"importe":"30"
+		},
+		{
+			"id":"HA02",
+			"descripcion":"Fallo de microfono",
+			"importe":"65"
+		},
+		{
+			"id":"HA03",
+			"descripcion":"Fallo de timbre",
+			"importe":"50"
+		},
+		{
+			"id":"HA04",
+			"descripcion":"Fallo de conector auriculares",
+			"importe":"40"
+		},
+		{
+			"id":"HB01",
+			"descripcion":"Fallo de interruptor/ pulsador",
+			"importe":"21"
+		},
+		
+		{
+			"id":"HB02",
+			"descripcion":"Fallo de teclado de volumen",
+			"importe":"34"
+		},
+		
+		{
+			"id":"HC01",
+			"descripcion":"Fallo de cámara trasera",
+			"importe":"11"
+		},
+		
+		{
+			"id":"HC02",
+			"descripcion":"Fallo de cámara frontal",
+			"importe":"54"
+		},
+		
+		{
+			"id":"HC03",
+			"descripcion":"Fallo de flash",
+			"importe":"21"
+		},
+		
+		{
+			"id":"HD01",
+			"descripcion":"Fallo de display",
+			"importe":"32"
+		},
+		
+		{
+			"id":"HE01",
+			"descripcion":"Fallo de carga batería",
+			"importe":"15"
+		},
+		
+		{
+			"id":"HE02",
+			"descripcion":"Fallo de conector cargador",
+			"importe":"13"
+		},	
+		
+		{
+			"id":"HE03",
+			"descripcion":"Fallo de encendido",
+			"importe":"22"
+		},	
+		
+		{
+			"id":"HP01",
+			"descripcion":"Fallo de teclado",
+			"importe":"18"
+		},	
+		
+		{
+			"id":"HP02",
+			"descripcion":"Fallo de carcasas",
+			"importe":"45"
+		},	
+		
+		
+		{
+			"id":"HP03",
+			"descripcion":"Fallo de indicador led",
+			"importe":"54"
+		},	
+		
+		
+		{
+			"id":"HP04",
+			"descripcion":"Fallo de la tarjeta memoria",
+			"importe":"31"
+		},	
+		
+		{
+			"id":"HP05",
+			"descripcion":"Fallo de sim card",
+			"importe":"28"
+		},	
+		
+		{
+			"id":"HP06",
+			"descripcion":"Fallo de vibrador",
+			"importe":"14"
+		},	
+		
+		{
+			"id":"HX01",
+			"descripcion":"Fallo de antena",
+			"importe":"28"
+		},	
+		
+		{
+			"id":"SO01",
+			"descripcion":"Desbloqueo de equipo",
+			"importe":"51"
+		},	
+		
+		{
+			"id":"SS01",
+			"descripcion":"Fallo de software",
+			"importe":"27"
+		},	
+		
+		{
+			"id":"SX01",
+			"descripcion":"Fallo de comunicación",
+			"importe":"16"
+		},	
+		
+		{
+			"id":"SX02",
+			"descripcion":"Fallo de SMS",
+			"importe":"17"
+		},
+		
+		{
+			"id":"SX03",
+			"descripcion":"Fallo conexión wifi/datos",
+			"importe":"27"
+		},
+		
+		{
+			"id":"SX04",
+			"descripcion":"Fallo de nivel de recepción",
+			"importe":"32"
+		}				
+																																								
+		
+	],
+	"AccesoriosCollection":[
+		{
+			
+			"accesorio":"ACC1",
+			"descripcion":"Terminal"
+		},
+		{
+			
+			"accesorio":"ACC2",
+			"descripcion":"Cargador"
+		},
+		{
+		
+			"accesorio":"ACC3",
+			"descripcion":"Batería"
+		},
+		{
+		
+			"accesorio":"ACC4",
+			"descripcion":"Carcasa"
+		},
+		{
+		
+			"accesorio":"ACC5",
+			"descripcion":"Tapa"
+		},
+		
+		{
+		
+			"accesorio":"ACC6",
+			"descripcion":"Antena"
+		}		
+		
+	],
+	"historicoReparaciones":[
+		{
+			"numOrden" : "1",
+			"imei" : "9348374371829",
+			"descripcion":"Reparacion terminal",
+			"fechaCreacion":"21/02/2016",
+			"fechaCierre":"14/04/2016",
+			"tipoProceso":"DOA",
+			"tipoReparacion":"DOA"
+			
+		},
+		{
+			"numOrden" : "3",
+			"imei" : "4748374371812",
+			"descripcion":"Reparacion terminal",
+			"fechaCreacion":"11/02/2016",
+			"fechaCierre":"17/04/2016",
+			"tipoProceso":"DOA",
+			"tipoReparacion":"Xpress"
+		},
+		{
+			"numOrden" : "4",
+			"imei" : "8748374371818",
+			"descripcion":"Reparacion terminal",
+			"fechaCreacion":"08/02/2016",
+			"fechaCierre":"21/04/2016",
+			"tipoProceso":"DOA",
+			"tipoReparacion":"Protección movistar"
+		},
+		{
+			"numOrden" : "1",
+			"imei" : "9348374371829",
+			"descripcion":"Reparacion terminal",
+			"fechaCreacion":"21/02/2016",
+			"fechaCierre":"14/04/2016",
+			"tipoProceso":"DOA",
+			"tipoReparacion":"DOA"
+		}
+	],
+	"tipoReparacion":[
+		{
+			"F001":"A",
+			"Descripcion":"DOA"
+		},
+		{
+			"F001":"B",
+			"Descripcion":"GARANTIA"
+		},
+		{
+			"F001":"C",
+			"Descripcion":"XPRESS"
+		},
+		{
+			"F001":"D",
+			"Descripcion":"PROTECCION MOVISTAR"
+		}
+	],
+	
+	
+	"terminalesPrestamo":[
+		{
+			"numSerie":"80123456070102",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		{
+			"numSerie":"80123456070103",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		{
+			"numSerie":"80123456070104",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		{
+			"numSerie":"80123456070105",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		
+		{
+			"numSerie":"80123456070105",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		
+		{
+			"numSerie":"80123456070105",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		},
+		
+		{
+			"numSerie":"80123456070105",
+			"codMaterial":"TMGMXNK0N210AM21",
+			"nombreMaterial":" Nokia N210 Amarillo 21 MX31",
+			"jerarquia":"00003"
+		}				
+				
+	]	
+	
+}

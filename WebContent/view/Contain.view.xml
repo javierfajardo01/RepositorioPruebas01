@@ -1,0 +1,162 @@
+<core:View 
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"   
+    xmlns:layout="sap.ui.layout"	
+    xmlns:appData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="aplication.default.controller.Contain" xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<SplitApp 
+	    id="SplitApp"
+	    initialDetail="detailDetail" 
+	    initialMaster="master" 
+	    mode="ShowHideMode">
+		<masterPages>
+			<Page 
+			    id="master" 
+			    title="Interfaces" 
+			    icon="sap-icon://action" 
+			    class="sapUiStdPage"
+			    showNavButton="false"
+				navButtonPress="onNavBack"
+				mode="{device>/listMode}"
+				>
+  				<subHeader>
+					<Toolbar>
+						<SearchField
+						    id="searchField"
+						    placeholder="{i18n>searchEmployeesPlaceholder}"
+							liveChange="handleSearch"
+							width="100%" />
+					</Toolbar>
+				</subHeader>
+				<content>
+					<List
+						id="empList"
+						items="{
+						  path: 'suggestEmployees>/results',
+						  sorter : {
+						  		path: 'FirstName',
+						  		descending: 'true'
+						  }
+						}"
+						headerText="Empleados"
+						itemPress="addEmployeeToList"
+						mode="SingleSelection"
+						includeItemInSelection="true">
+						<items>
+							<StandardListItem
+								id="employeeItem"
+								description="{suggestEmployees>Title}"	
+								title="{suggestEmployees>FirstName} {suggestEmployees>LastName}"
+								type="Active"
+								class="itemMasterInterfase"/>
+						</items>
+					</List>
+				</content>
+				
+				<!-- FOOTER MASTER  -->	
+				<footer>
+					<Toolbar>
+				
+						<ToolbarSpacer/>
+							<Button  icon="sap-icon://sort" press="onSorting" />
+						</Toolbar>
+				</footer>
+			</Page>
+		</masterPages>
+		<detailPages>
+			<Page 
+			    id="detailDetail" 
+			    title="Datos interface" 
+			    class="sapUiStdPage" 
+			    showNavButton="{device>/isPhone}"
+			    navButtonPress="onNavMaster"  >
+				<content> 
+						
+				   <Panel
+				       expandable="false"
+				       expanded="true"
+				       headerText="Empleados de [{General>/City}] seleccionados para envio:" >
+						<content>
+						    <HBox class="hBoxInterfaceSup">
+								
+								<Table id="idEmployeesTable"
+									growing="true" 
+									growingThreshold="4"
+									items="{
+										path: 'selectedEmployees>/results',
+										sorter: {
+											path: 'EmployeeID'
+										}
+									}">
+									<headerToolbar>
+										<Toolbar class="tableHeader">
+											<SearchField id="tableSearchField"
+												liveChange="handleTableSearch"/>
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="{i18n>idEmployee}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>fullName}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>title}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>city}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>country}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>address}" />
+										</Column>
+										<Column hAlign="End">
+											<Text text="{i18n>quit}" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text
+													text="{selectedEmployees>EmployeeID}"/>
+												<ObjectIdentifier 
+													title="{selectedEmployees>FirstName} {selectedEmployees>LastName}"/>
+												<Text
+													text="{selectedEmployees>Title}" />
+												<Text
+													text="{selectedEmployees>City}" />
+												<Text
+													text="{selectedEmployees>Country}"/>
+												<Text
+													text="{selectedEmployees>Address}" />
+												<Button 
+													icon="sap-icon://sys-minus"
+													press="deleteEmployeeFromList" 
+													/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								
+						    </HBox>
+						</content>
+				   </Panel> 
+				</content>
+				<footer>
+					<Toolbar>
+				
+						<ToolbarSpacer/>
+							<Button text="Enviar" type="Emphasized" icon="sap-icon://action" press="goToConfirm" />
+						</Toolbar>
+				</footer>
+			</Page>
+		</detailPages>
+ 
+	</SplitApp>
+ 
+</core:View>

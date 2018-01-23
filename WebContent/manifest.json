@@ -1,0 +1,168 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "aplication",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"ach": "CA-UI5-DOC",
+		"dataSources": {
+			"mainService": {
+				"local" : "false",
+				"uri": "http://services.odata.org/V2/Northwind/Northwind.svc",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri" : "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_bluecrystal"]
+  	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": "aplication.default.view.App",
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": { }
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "aplication.default.i18n.i18n"
+				}
+			},
+			"datosOdata": {
+				"dataSource": "mainService"
+			}
+		},
+		
+		"resources": {
+			  "css": [
+				{
+				  "uri": "assets/css/custom.css"
+				}
+			  ],
+			  
+  			  "js":[
+			  		{
+			  			"uri": "assets/utiles/utiles.js"
+			  		}
+		  	  ]
+			  
+		},
+	
+     	"routing": {
+	         "config": {
+	            "routerClass": "sap.m.routing.Router",
+	            "viewType": "XML",
+	            "viewPath": "aplication.default.view",
+	            "controlId": "app",
+	            "controlAggregation": "pages",
+	            "transition": "slide",
+	              "bypassed": { 
+              		 "target": "notFound"
+           		   }
+	         },
+	         "routes": [
+	         
+		         {
+		            "pattern": "",
+		            "name": "appHome",
+		            "target": "home"
+		         },
+		         
+		         {
+				   "pattern": "contain",
+				   "name": "contain",
+				   "target": "contain"
+				 },
+				 
+				 {
+				   "pattern": "confirm",
+				   "name": "confirm",
+				   "target": "confirm"
+				 },  	
+
+				 {
+					"pattern": "detail",
+					"name": "detail",
+				   "target": "detail"
+				 
+				 },
+				 
+				 {
+					"pattern": "webservices",
+					"name": "webservices",
+				   "target": "webservices"
+				 
+				 },
+				 
+				 {
+				   "pattern": "datositem",
+				   "name": "datositem",
+				   "target": "datositem"
+				 
+				 }
+					
+	         ],
+	         
+	         "targets": {	
+	            
+	            "home": {
+	               "viewName": "home.main",
+	               "viewLevel" : 1
+	            },
+	            
+		        "contain": {
+				   "viewName": "Contain",
+				   "viewLevel" : 2
+				},
+				
+				"confirm": {
+				   "viewName": "Confirmation",
+				   "viewLevel" : 3
+				},        
+	            
+				"detail": {
+				   "viewName": "Detail",
+				   "viewLevel" : 3
+				}, 
+				
+				"webservices": {
+				   "viewName": "WebServices",
+				   "viewLevel" : 3
+				},
+				
+				"datositem": {
+				   "viewName": "DatosItem",
+				   "viewLevel" : 3
+				},
+				
+	            "notFound": {
+               		"viewName": "NotFound",
+              		 "transition": "show"
+					 
+					 
+           		}
+	         }
+       }
+	}
+}
