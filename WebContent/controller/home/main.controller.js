@@ -22,6 +22,11 @@ sap.ui.define([
 		* @memberOf postventa.testing
 		*/
 		onInit: function() {
+
+			/**Servicios para rellenar la tabla de datos:
+			 * http://services.odata.org/ODataAPIExplorer/ODataAPIExplorer.html
+			 * http://services.odata.org/V3/Northwind/Northwind.svc/Products
+			 */
 			
 			// recogemos el modelo i18n y se lo aplicamos a oBundle (como un recurso de la vista).
 	        this.oBundle = sap.ui.getCore().getModel("i18n").getResourceBundle(); 
@@ -69,7 +74,7 @@ sap.ui.define([
 			
 			switch (origenLlamada) {
 			
-			case 'listadoTerritorios' :
+			case 'listadoProducts' :
 				
 				
 					

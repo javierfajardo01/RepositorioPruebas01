@@ -4,18 +4,72 @@
     		xmlns:l="sap.ui.layout"
 			controllerName="aplication.default.controller.home.main" 
 			xmlns:html="http://www.w3.org/1999/xhtml">
-			
-	<Page 
-			    id="detail" 
-			    title="Página principal" 
-			    class="sapUiStdPage"
-			    showNavButton="{device>/isPhone}"
-			    navButtonPress="onNavMaster">
-			<content>
-					 
-					<Button  type="Accept" press="onPress2" text= "Navegar"/>
-					
-			</content>
+
+	<Page title= "Tablas Datos">
+		<Button type="Back" press="onNavBack" />
+		
+		<Table 	id="idProductsTable1"
+				width="50%"
+				hAlign="Left"
+				items="{
+					path : 'Products>/datos',
+					sorter : {
+						path : 'ProductID'
+					}
+				}"> 
+		<headerToolbar>
+				<Toolbar>
+					<Title text="Tabla Productos" width= "50%"/>
+					<ToolbarSpacer/>
+					<SearchField id="searchProducts" width="50%" liveChange="onFilterProducts"/>
+					<ToolbarSpacer/>
+					<Button text= "Ordenar" press= "onChangeOrder"/>
+				</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em"
+				hAlign="Left">
+				<Text text="ProductID" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="ProductName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="UnitPrice"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="UnitsInStock" />
+			</Column>
+			<Column
+				width="12em"
+				hAlign="Right">
+				<Text text="QuantityPerUnit" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem 
+						title="{Products>ProductID}"
+						type= "Active"
+						press="onItemSelected">	
+				<cells>
+					<ObjectIdentifier
+						title="{Products>ProductID}"/>
+					<Text
+						text="{Products>ProductName}"/>
+					<Text
+						text="{Products>UnitPrice}"/>
+					<Text
+						text="{Products>UnitsInStock}"/>
+					<Text
+						text="{Products>QuantityPerUnit}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 				
 	</Page>
 	 

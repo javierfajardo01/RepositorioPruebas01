@@ -11,12 +11,12 @@ sap.ui.define([
 	var model = new Object();
 	
 	model.get = {	
-			cargarTerritorios: function(oContext) {
+			cargarProductos: function(oContext) {
 				// cargamos la plantilla de la estructura de los datos
 				var parametros= comunEstructuraDatos.parametros.estructuraParametros();
 		
 				parametros.entidades= {
-						firstEntity :  "Territories"
+						firstEntity :  "Products"
 				},	
 				parametros.params = {
 				        KeyValues : {
@@ -29,7 +29,7 @@ sap.ui.define([
 						expandEntities : [
 						]		        
 					};			
-				comunOdataV2.actions.oDataRead(oContext, parametros, 'listadoTerritorios');
+				comunOdataV2.actions.oDataRead(oContext, parametros, 'listadoProducts');
 			},
 			
 			empleadosPorTerritorio: function(oContext, territoryFilter) {
