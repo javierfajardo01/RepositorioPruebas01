@@ -29,7 +29,7 @@ sap.ui.define([
 						expandEntities : [
 						]		        
 					};			
-				comunOdataV2.actions.oDataRead(oContext, parametros, 'listadoProducts');
+				comunOdataV2.actions.oDataRead(oContext, parametros, 'listadoProductos');
 			},
 			
 			empleadosPorTerritorio: function(oContext, territoryFilter) {

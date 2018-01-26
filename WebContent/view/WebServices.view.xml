@@ -12,14 +12,11 @@
 				width="50%"
 				hAlign="Left"
 				items="{
-					path : 'InfoWeb>/datos',
-					sorter : {
-						path : 'LastName'
-					}
-				}">
+						path: 'Products>/results'
+						}"	>
 		<headerToolbar>
 				<Toolbar>
-					<Title text="Tabla clientes" width= "50%"/>
+					<Title text="Tabla Productos" width= "50%"/>
 					<ToolbarSpacer/>
 					<SearchField id="searchCustomers" width="50%" liveChange="onFilterCustomers"/>
 					<ToolbarSpacer/>
@@ -30,47 +27,47 @@
 			<Column
 				width="12em"
 				hAlign="Left">
-				<Text text="LastName" />
+				<Text text="ProductID" />
 			</Column>
 			<Column
 				width="12em">
-				<Text text="FirstName" />
+				<Text text="ProductName" />
 			</Column>
 			<Column
 				width="12em">
-				<Text text="Address"/>
+				<Text text="QuantityPerUnit"/>
 			</Column>
 			<Column
 				width="12em">
-				<Text text="City" />
+				<Text text="UnitPrice" />
 			</Column>
 			<Column
 				width="12em"
 				hAlign="Right">
-				<Text text="Country" />
+				<Text text="UnitsInStock" />
 			</Column>
 		</columns>
 		<items>
 			<ColumnListItem 
-						title="{InfoWeb>LastName}"
+						title="{ProductID}"
 						type= "Active"
 						press="onItemSelected">	
 				<cells>
 					<ObjectIdentifier
-						title="{InfoWeb>LastName}"/>
+						title="{Products>ProductID}"/>
 					<Text
-						text="{InfoWeb>FirstName}"/>
+						text="{Products>ProductName}"/>
 					<Text
-						text="{InfoWeb>Address}"/>
+						text="{Products>QuantityPerUnit}"/>
 					<Text
-						text="{InfoWeb>City}"/>
+						text="{Products>UnitPrice}"/>
 					<Text
-						text="{InfoWeb>Country}"/>
+						text="{Products>UnitsInStock}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
 	</Table>
-	<!--
+	
 	<Table id="idCustomersTable2"
 		inset="false"
 		width="50%"
@@ -78,50 +75,56 @@
 		items="{AuxModel>/results}">
 		<headerToolbar>
 			<Toolbar>
-				<Title text="Customer Detailed" level="H2"/>
+				<Title text="Products Detailed" level="H2"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column
 				width="12em"
 				hAlign="Left">
-				<Text text="LastName" />
+				<Text text="ProductID" />
 			</Column>
 			<Column
 				width="12em">
-				<Text text="FirstName" />
+				<Text text="ProductName" />
 			</Column>
 			<Column
 				width="12em">
-				<Text text="Address"/>
+				<Text text="SupplierID"/>
 			</Column>
 			<Column
 				width="12em">
-				<Text text="City" />
+				<Text text="QuantityPerUnit"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="UnitPrice" />
 			</Column>
 			<Column
 				width="12em"
 				hAlign="Right">
-				<Text text="Country" />
+				<Text text="UnitsInStock" />
 			</Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
 					<ObjectIdentifier
-						title="{AuxModel>LastName}" />
+						title="{AuxModel>ProductID}" />
 					<Text
-						text="{AuxModel>FirstName}" />
+						text="{AuxModel>ProductName}" />
 					<Text
-						text="{AuxModel>Address}"/>
+						text="{AuxModel>SupplierID}"/>
 					<Text
-						text="{AuxModel>City}" />
+						text="{AuxModel>QuantityPerUnit}"/>
 					<Text
-						text="{AuxModel>Country}" />
+						text="{AuxModel>UnitPrice}" />
+					<Text
+						text="{AuxModel>UnitsInStock}" />
 				</cells>
 			</ColumnListItem>
 		</items>
-	</Table> -->
+	</Table>
 	</Page>
 </mvc:View>
 		

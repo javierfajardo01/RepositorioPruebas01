@@ -35,44 +35,53 @@ sap.ui.define([
 		var oContext= this;		
 				
 		$.ajax({
-			  url: "http://services.odata.org/V3/Northwind/Northwind.svc/Employees?$select=LastName,FirstName,Address,City,Country&$format=json"
-			}).done(function(response) {
-			  console.log("LLAMADA TERMINADA");
-			  console.log("RESPUESTA");
-			  console.log(response);
-			  
-			  var Obj= {datos: response.value};
-			  
-			  var model5= new JSONModel(Obj);
-			  
-			  oContext.getView().setModel(model5, "InfoWeb")
-			});
-			
-			 
-			console.log("DESPUES DE LA LLAMADA");
-		
+			  url: "http://services.odata.org/V2/Northwind/Northwind.svc/Products?$select=ProductID,ProductName,SupplierID,QuantityPerUnit,UnitPrice,UnitsInStock",
+			  type: 'GET',
+			  dataType: 'json',
+			  async: true,
+			  success: function(data){
+			/*	$('<h1/>').text(json.title).appendTo('body');
+				$('<div class="content"/>').html(json.html).appendTo('body'); */
+				console.log('Success')
+				console.log(data.d)
+				var model5= new JSONModel(data.d);
+				
+				oContext.getView().setModel(model5, "Products");
+				sap.ui.getCore().setModel(model5, "Products");
+				
+			  },
+			  error: function(xhr, status){
+				  alert('Respuesta errónea');
+				  console.log("Respuesta errónea");
+			  }
+			});		
 	},
 	
 	onItemSelected: function(oEvt){ 
-		
-		console.log(oEvt.getSource().getBindingContext("InfoWeb").getObject());
+		//Sacamos por consola los detalles del elemento del array en el que hemos hecho
+		//click en la primera tabla:
+		console.log(oEvt.getSource().getBindingContext("Products").getObject());
 	
+		//Almacenamos el modelo "AuxModel" en una variable "mod":
 		var mod= sap.ui.getCore().getModel("AuxModel");
 		
+		//Almacenamos los datos del modelo en una variable "datos":
 		var datos= mod.getData().results;
 		
-		datos.push(oEvt.getSource().getBindingContext("InfoWeb").getObject());
+		//Hacemos un push() para guardar el objeto en el que hemos hecho click en "datos":
+		datos.push(oEvt.getSource().getBindingContext("Products").getObject());
 		
-		
-				var object= {
-			
+		//Creamos una variable "object" en la que almacenamos los objetos que hemos guardado previamente:
+		var object= {
 			results: datos
 		}
 	
+		//Pasamos toda esta información al modelo:
 		mod.setData(object);
 		sap.ui.getCore().setModel(mod, "AuxModel");
-		
-		this.getView().setModel(mod, "AuxModel");
+
+		//Pasamos el modelo "AuxModel" a la vista:
+		this.getView().setModel(mod, "AuxModel"); 
 		
 		
 	},
@@ -209,7 +218,7 @@ sap.ui.define([
 
 	onItemPress: function(oEvt){
 		
-		var msg= oEvt.getSource().getBindingContext("ListaMateriales").getObject(); 
+		var msg= oEvt.getSource().getBindingContext("ListaProductos").getObject(); 
 		
 		var model1= new JSONModel();
 		model1.setData(msg);
