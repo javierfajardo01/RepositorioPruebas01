@@ -67,7 +67,7 @@
 			</ColumnListItem>
 		</items>
 	</Table>
-	
+	<!--
 	<Table id="idCustomersTable2"
 		inset="false"
 		width="50%"
@@ -124,7 +124,7 @@
 				</cells>
 			</ColumnListItem>
 		</items>
-	</Table>
+	</Table> -->
 	</Page>
 </mvc:View>
 		

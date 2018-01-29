@@ -120,6 +120,13 @@
 				   "name": "datositem",
 				   "target": "datositem"
 				 
+				 },
+				 
+				 {
+				   "pattern": "webservicesdetail",
+				   "name": "webservicesdetail",
+				   "target": "webservicesdetail"
+				 
 				 }
 					
 	         ],
@@ -153,6 +160,11 @@
 				
 				"datositem": {
 				   "viewName": "DatosItem",
+				   "viewLevel" : 3
+				},
+
+				"webservicesdetail": {
+				   "viewName": "WebServicesDetail",
 				   "viewLevel" : 3
 				},
 				

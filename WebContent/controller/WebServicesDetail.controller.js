@@ -12,14 +12,18 @@ sap.ui.define([
 ], function(BaseController,JSONModel,MessageBox, Filter, FilterOperator, Formatter, utiles, MessageToast, History, SortOrder) {
 	"use strict";
  
-	return BaseController.extend("aplication.default.controller.WebServices", {
+	return BaseController.extend("aplication.default.controller.WebServicesDetail", {
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf view.Master
 */
  	onInit: function() {
- 				
+    
+        var oRouter = this.getRouter();
+        oRouter.getRoute("webservicesdetail").attachMatched(this._onRouteMatched, this);
+    
+        /*			
 		var arrayAux= [];		
 		
 		var object= {
@@ -41,7 +45,7 @@ sap.ui.define([
 			  async: true,
 			  success: function(data){
 			/*	$('<h1/>').text(json.title).appendTo('body');
-				$('<div class="content"/>').html(json.html).appendTo('body'); */
+				$('<div class="content"/>').html(json.html).appendTo('body'); 
 				console.log('Success')
 				console.log(data.d)
 				var model5= new JSONModel(data.d);
@@ -54,9 +58,23 @@ sap.ui.define([
 				  alert('Respuesta errónea');
 				  console.log("Respuesta errónea");
 			  }
-			});		
-	},
-	
+			});		*/
+    },
+    
+    _onRouteMatched : function (oEvent) {            
+
+        // llamamos al metodo dnde cargamos los modelos principales de esta vista
+        this.cargarDatosiniciales();
+                
+    },
+
+    cargarDatosiniciales : function(){
+        
+        var model7= sap.ui.getCore().getModel("AuxModel");
+        this.getView().setModel(model7, "AuxModel")
+    },
+    
+    /*
 	onItemSelected: function(oEvt){ 
 		//Sacamos por consola los detalles del elemento del array en el que hemos hecho
 		//click en la primera tabla:
@@ -82,11 +100,8 @@ sap.ui.define([
 
 		//Pasamos el modelo "AuxModel" a la vista:
 		this.getView().setModel(mod, "AuxModel"); 
-		
-		//Navegamos a la sig pagina, que muestra los detalles del elemento pulsado:
-		this.getRouter().navTo("webservicesdetail");
-		
-	},
+	
+	}, */
 	
 	
 	onFilterCustomers: function (oEvt){

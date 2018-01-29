@@ -1,0 +1,69 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="aplication.default.controller.WebServicesDetail">
+	
+	<Page 
+		title= "Tabla Detail">
+		<Button type="Back" press="onNavBack" />
+	
+	<Table id="idCustomersTable2"
+		inset="false"
+		width="50%"
+		hAlign="Right"
+		items="{AuxModel>/results}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Products Detailed" level="H2"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em"
+				hAlign="Left">
+				<Text text="ProductID" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="ProductName" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="SupplierID"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="QuantityPerUnit"/>
+			</Column>
+			<Column
+				width="12em">
+				<Text text="UnitPrice" />
+			</Column>
+			<Column
+				width="12em"
+				hAlign="Right">
+				<Text text="UnitsInStock" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{AuxModel>ProductID}" />
+					<Text
+						text="{AuxModel>ProductName}" />
+					<Text
+						text="{AuxModel>SupplierID}"/>
+					<Text
+						text="{AuxModel>QuantityPerUnit}"/>
+					<Text
+						text="{AuxModel>UnitPrice}" />
+					<Text
+						text="{AuxModel>UnitsInStock}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</Page>
+</mvc:View>
