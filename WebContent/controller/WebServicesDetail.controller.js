@@ -23,42 +23,6 @@ sap.ui.define([
         var oRouter = this.getRouter();
         oRouter.getRoute("webservicesdetail").attachMatched(this._onRouteMatched, this);
     
-        /*			
-		var arrayAux= [];		
-		
-		var object= {
-			
-			results: arrayAux
-		}
-	
-		var model= new JSONModel(object);
-		sap.ui.getCore().setModel(model, "AuxModel");
-		
-		this.getView().setModel(model, "AuxModel");
-	
-		var oContext= this;		
-				
-		$.ajax({
-			  url: "http://services.odata.org/V2/Northwind/Northwind.svc/Products?$select=ProductID,ProductName,SupplierID,QuantityPerUnit,UnitPrice,UnitsInStock",
-			  type: 'GET',
-			  dataType: 'json',
-			  async: true,
-			  success: function(data){
-			/*	$('<h1/>').text(json.title).appendTo('body');
-				$('<div class="content"/>').html(json.html).appendTo('body'); 
-				console.log('Success')
-				console.log(data.d)
-				var model5= new JSONModel(data.d);
-				
-				oContext.getView().setModel(model5, "Products");
-				sap.ui.getCore().setModel(model5, "Products");
-				
-			  },
-			  error: function(xhr, status){
-				  alert('Respuesta errónea');
-				  console.log("Respuesta errónea");
-			  }
-			});		*/
     },
     
     _onRouteMatched : function (oEvent) {            
